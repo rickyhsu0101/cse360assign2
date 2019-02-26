@@ -9,13 +9,17 @@ package cse360assign2;
 public class Calculator {
 
 	private int total;
+	private String history;
 	/**
 	 * Class constructor
 	 * 
-	 * construct an instance of the class Calculator
-	 */
+	 * construct an instance of the class Calculator. The current total
+	 * is initialized to 0. The history is initialized to the intial
+	 * total which is 0.
+	 */	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	/**
      * The method returns the current total resulting value
@@ -36,6 +40,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total += value;
+		history += " + " + value;
 	}
 	/**
      * The method takes in an integer and subtracts it from the
@@ -46,6 +51,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total -= value;
+		history += " - " + value;
 	}
 	/**
      * The method takes in an integer and multiplies it
@@ -56,6 +62,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total *= value;
+		history += " * " + value;
 	}
 	/**
      * The method takes in an integer and divides into the
@@ -65,6 +72,9 @@ public class Calculator {
 	 * 
 	 */
 	public void divide (int value) {
+		history += " / " + value;
+		//divide only if the value is non-zero to prevent division by 0
+		//error
 		if (value == 0) {
 			total = 0;
 		} else {
@@ -79,6 +89,6 @@ public class Calculator {
 	 * 
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
