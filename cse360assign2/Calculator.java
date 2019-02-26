@@ -35,7 +35,7 @@ public class Calculator {
 	 * 
 	 */
 	public void add (int value) {
-		
+		total += value;
 	}
 	/**
      * The method takes in an integer and subtracts it from the
@@ -45,7 +45,7 @@ public class Calculator {
 	 * 
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
 	}
 	/**
      * The method takes in an integer and multiplies it
@@ -55,7 +55,7 @@ public class Calculator {
 	 * 
 	 */
 	public void multiply (int value) {
-		
+		total *= value;
 	}
 	/**
      * The method takes in an integer and divides into the
@@ -65,7 +65,11 @@ public class Calculator {
 	 * 
 	 */
 	public void divide (int value) {
-		
+		if (value == 0) {
+			total = 0;
+		} else {
+			total /= value;
+		}	
 	}
 	/**
      * The method returns the history of totals resulted from all the
